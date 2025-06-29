@@ -10,7 +10,7 @@ def print_menu():
     4. Delete Contact
     5. Update Contact
     6. Exit
-    """, "green")
+    """, "blue")
 
     print(colored_menu_text)
 
@@ -28,7 +28,7 @@ def print_contact(contact: dict):
     print(f"{contact['first_name']} {contact['last_name']}, {contact['phone']}, {contact['group']}")
 
 def print_all_contact(contacts: list[dict]):
-    print("ALl Contacts")
+    print("All Contacts")
     for contact in contacts:
         print_contact(contact)
 

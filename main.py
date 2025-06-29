@@ -1,7 +1,6 @@
-from sys import exit
 from printer import print_menu
-from contact import add_contact, show_all_contact
-
+from contact import add_contact, show_all_contact, search_contact, delete_contact,update_contact
+from sys import exit
 
 def main():
     contacts: list[dict] = [
@@ -11,22 +10,25 @@ def main():
     while True:
         print_menu()
 
-        choice = input("Menu tanlang: ")
+        choice = input("Menu tanlang: ").strip()
 
         if choice == '1':
             add_contact(contacts)
         elif choice == '2':
+            print(contacts)  
             show_all_contact(contacts)
         elif choice == '3':
-            pass
+            search_contact(contacts)
         elif choice == '4':
-            pass
+            delete_contact(contacts)
         elif choice == '5':
-            pass
+            update_contact(contacts)
         elif choice == '6':
-            pass
-        else:
+            print("Dasturdan chiqilmoqda...")
             exit(0)
+        else:
+            print("Noto‘g‘ri tanlov! Iltimos menyudagi raqamlardan birini kiriting.")
 
+            
 if __name__ == "__main__":
     main()
